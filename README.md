@@ -1,5 +1,5 @@
 # OpenCV-object-pose-for-emmisive-target
-This project is for people who are looking for object pose estimation/augmented reality solutions where reflective fiducial markers are not an option. This method is designed to work for emmisive target elements, such as LEDs or coloured bulbs. <br>
+This project is for people who are looking for object pose estimation/augmented reality solutions where reflective fiducial markers are not an option. This method is designed to work for emmisive target elements, such as LEDs or coloured bulbs. I am using red circles to emulate red LEDs since i don't have physical LEDs available on hand. Suffice to say, both will function in a similar manner. <br>
 
 # Steps required for pose estimation:
 1) Obtain and calibrate a camera system.<br>
