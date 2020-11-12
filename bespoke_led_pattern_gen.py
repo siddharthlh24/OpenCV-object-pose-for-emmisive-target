@@ -14,7 +14,7 @@ color = (0,0,255)
 thickness = -1
 radius = 15
 
-image = 0*np.ones(shape=[500, 500,3], dtype=np.uint8)
+image = 255*np.ones(shape=[500, 500,3], dtype=np.uint8)
 image = cv2.circle(image, (50,50), radius, color, thickness)
 image = cv2.circle(image, (50,450), radius, color, thickness)
 image = cv2.circle(image, (450,50), radius, color, thickness)
