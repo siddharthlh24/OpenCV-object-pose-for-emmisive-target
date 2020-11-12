@@ -49,4 +49,5 @@ Object back projection is done by the following function:
 ```
 imgpts, jac = cv.projectPoints(cube3d, rvecs, tvecs, mtx, dist)
 ```
-
+# Calculating derivatives
+As long the time between frame capture is constant, rotation and linear velocities can be estimated easily.
