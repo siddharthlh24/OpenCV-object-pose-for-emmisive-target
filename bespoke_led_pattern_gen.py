@@ -1,10 +1,9 @@
-from numpy.lib.financial import nper
+
 import cv2
 import numpy as np
-from matplotlib import pyplot as plt
-import random as rd
 
-def drawrect( img , pt1):
+
+def drawrect( img , pt1):                              # if you got rectangular LEDs
     drec = 10
     cv2.rectangle(img, pt1=(pt1[0]-drec,pt1[1]-drec), pt2=(pt1[0]+drec,pt1[1]+drec), color=(0,0,255), thickness=-1)
 
@@ -30,6 +29,6 @@ drawrect(image,(256+200,256))"""
 
 """for v in range(100):
     image = cv2.circle(image, (rd.randint(0,640),rd.randint(0,480)), rd.randint(1,3), color, thickness)"""
-cv2.imwrite("diy_dock_marker.png", image)
+cv2.imwrite("tracking_marker.png", image)
 cv2.imshow("White Blank", image)
 cv2.waitKey(0)
