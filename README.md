@@ -25,3 +25,4 @@ Beacause there is no way to establish a correspondece beween the LEDs dected in 
 geometric_logic.py ) for them. <br>
 
 ![](media/tracking_marker.png)
+Left: tracking pattern :: Right: geometric logic<br>
