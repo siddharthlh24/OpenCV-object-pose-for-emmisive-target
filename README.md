@@ -43,6 +43,16 @@ _, rvecs, tvecs, inliers = cv.solvePnPRansac(objpts, dst, mtx, dist,cv.SOLVEPNP_
 The above function will return rotation and translation vectors which can be further processed and used to project any 3d object. The pattern used here is coplanar, however that is not necessary. Using non coplanar 3D points helps to reduc ambiguites and measurement inaccuracies.<br>
 Refer to this link: https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga357634492a94efe8858d0ce1509da869 for different variants of PNP.<br>
 
+```
+SOLVEPNP_ITERATIVE 
+SOLVEPNP_EPNP 
+SOLVEPNP_P3P 
+SOLVEPNP_DLS 
+SOLVEPNP_UPNP 
+SOLVEPNP_AP3P 
+SOLVEPNP_IPPE 
+SOLVEPNP_IPPE_SQUARE 
+```
 The current implementation also includes 2 moving averages for rotation and translation respectively to smoothen out jitter and increase accuracy. However, note that higher sizes for the moving average buffer will make response to change slower. A value of 3 to 5 is recommended for rotation and 1 for translation.<br>
 
 Object back projection is done by the following function:
