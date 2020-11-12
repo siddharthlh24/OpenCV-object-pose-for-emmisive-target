@@ -12,3 +12,9 @@ This project is for people who are looking for object pose estimation/augmented 
 
 # Object Pose Reprojection
 ![](media/ezgif-3-7cfb867c5025.gif)
+
+# Step 1 : Calibrating a camera
+Any camera has physical properties of how they represent a point in 3D space in 2D image space. Camera calibration is the process of estimating intrinsic and/or
+extrinsic parameters. Intrinsic parameters deal with the camera's internal characteristics, such as, its focal length, skew, distortion, and image centre.The camera will also have some inherent defects,such as barrel or pincushion distortion etc. which are represented in a distortion matrix. We use several images of chessboard to calibrate camera ( zheng method ). ( Print the chessboard pattern on paper and measure the side of a chessboard square to input into the programme )<br>
+
+![](media/template.JPG)
