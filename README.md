@@ -22,11 +22,12 @@ extrinsic parameters. Intrinsic parameters deal with the camera's internal chara
 # Step 2 + 3 : Creating trackable pattern, and tracking system for LEDs
 This is the most tricky part. We will need to create a LED pattern where each LED can be individually detected by using special geometric rules. <br>**Why do we need to do this** ?<br><br>
 Beacause there is **absolutely no way** to establish a correspondece beween the LEDs dected in image to the one in the created pattern **without geometric rules**. I have provided one example here, and have included programmes to prototype new patterns (bespoke_led_pattern_gen.py) and develop geometry rules(
-geometric_logic.py ) for them. <br>
+geometric_logic.py ) for them. It is imporatant to take care while developing patterns, not to create abuiguities and minimize iterative detection methods. <br> 
+**In the picture below, on the left is the generated tracking pattern, and on the right is the geometric logic to detect each LED.**
 
 ![](media/tracking_marker.png)
 a) Detect all LEDs using a colurspace change to HSV and threshold for red. Find the centres for contours and store them in an array.<br>
-b) Calculate a **convex hull** to detect on outer 4 points/LEDs . These will form **pt1,pt2,pt3,pt4** but we **don't know** in which order yet. 
+b) Calculate a **convex hull** to detect on outer 4 points/LEDs . These will form **pt1,pt2,pt3,pt4** but we **don't know** in which order yet. <br>
 c) The remaining point/LED not part of the convex hull will be **in_pt**. Alternatively, we can find the centre of the convex hull and in_pt will always be the nearest point ( green rectangle ).<br>
 d) The point closest to in_pt is taken as pt1 (blue rectangle) . Then we go **clockwise** and assign other points on the hull in order. This is done by **calculating slopes and barrels shifting** the points according to the values.<br>
 e) We  have now identified every LEDs perfectly. <br>
