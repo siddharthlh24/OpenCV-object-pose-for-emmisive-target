@@ -23,7 +23,7 @@ b) The calibration matrices for given camera saves as an **.npz** archive which 
 
 # Step 2 + 3 : Creating trackable pattern, and tracking system for LEDs
 This is the most tricky part. We will need to create a LED pattern where each LED can be individually detected by using special geometric rules. <br>**Why do we need to do this** ?<br><br>
-Beacause there is **absolutely no way** to establish a correspondece beween the LEDs dected in image to the one in the created pattern **without geometric rules**. I have provided one example here, and have included programmes to [prototype new patterns](bespoke_led_pattern_gen.py) and develop [geometry rules](
+Beacause there is **absolutely no way** to establish a correspondece beween the LEDs detected in image to the one in the created pattern **without geometric rules**. I have provided one example here, and have included programmes to [prototype new patterns](bespoke_led_pattern_gen.py) and develop [geometry rules](
 geometric_logic.py ) for them. It is imporatant to take care while developing patterns, not to create abuiguities and minimize iterative detection methods. <br> 
 **In the picture below, on the left is the generated tracking pattern, and on the right is the geometric logic to detect each LED.**
 
