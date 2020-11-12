@@ -18,3 +18,8 @@ Any camera has physical properties of how they represent a point in 3D space in 
 extrinsic parameters. Intrinsic parameters deal with the camera's internal characteristics, such as, its focal length, skew, distortion, and image centre.The camera will also have some inherent defects,such as barrel or pincushion distortion etc. which are represented in a distortion matrix. We use several images of chessboard to calibrate camera ( zheng method ). ( Print the chessboard pattern on paper and measure the side of a chessboard square to input into the programme )<br>
 
 ![](media/template.JPG)
+
+# Step 2: Creating trackable pattern 
+This is the most tricky part. We will need to create a LED pattern where each LED can be individually detected by using special geometric rules. Why do we need to do this ?<br>
+Beacause there is now way to establish a correspondece beween the LEDs dected in image to the one in the created pattern without geometric rules. I have provided one example here, and included programmes to prototype new patterns(bespoke_led_pattern_gen.py) and geomtry rules(
+geometric_logic.py ) for them.
