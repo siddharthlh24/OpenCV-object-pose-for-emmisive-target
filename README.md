@@ -18,7 +18,7 @@ Any camera has physical properties of how they represent a point in 3D space in 
 extrinsic parameters. Intrinsic parameters deal with the camera's internal characteristics, such as, its focal length, skew, distortion, and image centre.The camera will also have some inherent defects,such as barrel or pincushion distortion etc. which are represented in a distortion matrix. We use several images of chessboard to calibrate camera ( zheng method ).<br>
 ![](media/template.JPG)<br>
 a) Print the [required chessboard pattern](camera_calibration/calib_pattern.png) on paper and measure the side of a chessboard square to input into the programme. <br>
-b) The calibration matrices for given saves as an **.npz** archive which is used during tacking and pose estimation. I have included one as an example (poco_x2.npz) and can be used if we use any 1080p stream from phone cameras.
+b) The calibration matrices for given camera saves as an **.npz** archive which is used during tacking and pose estimation. I have included one as an example (poco_x2.npz) and can be used if we use any 1080p stream from phone cameras.
 
 # Step 2 + 3 : Creating trackable pattern, and tracking system for LEDs
 This is the most tricky part. We will need to create a LED pattern where each LED can be individually detected by using special geometric rules. <br>**Why do we need to do this** ?<br><br>
