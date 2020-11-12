@@ -8,7 +8,7 @@ Demo video : https://youtu.be/RGoBDAEkDBU <br>
 3) Use camera to track key points and establish a correspondence between the points being tracked and 3D reference points.<br>
 4) Relative position and Orientation (Pose) are obtained by solving the Perspective-N-Point problem. <br>
 
-# Augmented reality o/p
+# Augmented Reality Output
 ![](media/ezgif-3-6bc187371c65.gif)
 
 # Object Pose Reprojection
