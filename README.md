@@ -31,3 +31,8 @@ c) The remaining point/LED not part of the convex hull will be **in_pt**. Altern
 d) The point closest to in_pt is taken as pt1 (blue rectangle) . Then we go **clockwise** and assign other points on the hull in order. This is done by **calculating slopes and barrels shifting** the points according to the values.<br>
 e) **Yay !!** We  have now identified every LEDs perfectly. Try making your own pattern and corresponding geometric rules, it's a little hard to do but hugely satisfing when complete. Just make sure to minimize and rotational ambuigities that might occur :) <br>
 
+# Step 4 : Perspective-n-point 
+Given a set of n 3D points in a world reference frame and their corresponding 2D image projections
+as well as the calibrated intrinsic camera parameters, we need to determine the 6 DOF pose of the
+camera in the form of its rotation and translation with respect to the world/target. An inverse of the
+rotation matrix will in effect, provide the target pose.
