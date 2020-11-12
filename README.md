@@ -36,3 +36,4 @@ Given a set of n 3D points in a world reference frame and their corresponding 2D
 as well as the calibrated intrinsic camera parameters, we need to determine the 6 DOF pose of the
 camera in the form of its rotation and translation with respect to the world/target. An inverse of the
 rotation matrix will in effect, provide the target pose.
+![](media/pnp_desc.JPG)<br>
