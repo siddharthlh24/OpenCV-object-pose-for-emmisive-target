@@ -15,9 +15,10 @@ This project is for people who are looking for object pose estimation/augmented 
 
 # Step 1 : Calibrating a camera
 Any camera has physical properties of how they represent a point in 3D space in 2D image space. Camera calibration is the process of estimating intrinsic and/or
-extrinsic parameters. Intrinsic parameters deal with the camera's internal characteristics, such as, its focal length, skew, distortion, and image centre.The camera will also have some inherent defects,such as barrel or pincushion distortion etc. which are represented in a distortion matrix. We use several images of chessboard to calibrate camera ( zheng method ). ( Print the chessboard pattern on paper and measure the side of a chessboard square to input into the programme )<br>
-
+extrinsic parameters. Intrinsic parameters deal with the camera's internal characteristics, such as, its focal length, skew, distortion, and image centre.The camera will also have some inherent defects,such as barrel or pincushion distortion etc. which are represented in a distortion matrix. We use several images of chessboard to calibrate camera ( zheng method ).<br>
 ![](media/template.JPG)
+a) Print the chessboard pattern [a relative link](camera_calibration/calib_pattern.png) on paper and measure the side of a chessboard square to input into the programme. <br>
+b) The calibration matrices for given saves as an **.npz** archive which is used during tacking and pose estimation. I have included one as an example (poco_x2.npz) and can be used if we use any 1080p stream from phone cameras.
 
 # Step 2 + 3 : Creating trackable pattern, and tracking system for LEDs
 This is the most tricky part. We will need to create a LED pattern where each LED can be individually detected by using special geometric rules. <br>**Why do we need to do this** ?<br><br>
@@ -39,5 +40,9 @@ Given a set of n 3D points in a world reference frame and their corresponding 2D
 ```
 _, rvecs, tvecs, inliers = cv.solvePnPRansac(objpts, dst, mtx, dist,cv.SOLVEPNP_IPPE)
 ```
-The above function will return rotation and translation vectors which can be further processed used to project any 3d object. The pattern used here is coplanar, however that is not necessary. Using non coplanar 3D points helps to reduc ambiguites and masurement inaccuracies.<br>
-Refer to this link: https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga357634492a94efe8858d0ce1509da869 for different variants of PNP.
+The above function will return rotation and translation vectors which can be further processed and used to project any 3d object. The pattern used here is coplanar, however that is not necessary. Using non coplanar 3D points helps to reduc ambiguites and measurement inaccuracies.<br>
+Refer to this link: https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga357634492a94efe8858d0ce1509da869 for different variants of PNP.<br>
+
+The current implementation also includes 2 moving averages for rotation and translation respectively to smoothen out jitter and increase accuracy. However, note that higher sizes for the moving average buffer will make response to change slower. A value of 3 to 5 is recommended for rotation and 1 for translation.<br>
+
+Object back projection is done by the following function
