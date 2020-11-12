@@ -6,3 +6,9 @@ This project is for people who are looking for object pose estimation/augmented 
 2) Create a trackable pattern and store 3d information of the pattern using the physical construction information of the target.<br>
 3) Use camera to track key points and establish a correspondence between the points being tracked and 3D reference points.<br>
 4) Relative position and Orientation (Pose) are obtained by solving the Perspective-N-Point problem. <br>
+
+# Augmented reality o/p
+![](media/ezgif-3-6bc187371c65.gif)
+
+# Object Pose Reprojection
+![](media/ezgif-3-7cfb867c5025.gif)
