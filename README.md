@@ -36,6 +36,6 @@ e) We  have now identified every LEDs perfectly. <br>
 Given a set of n 3D points in a world reference frame and their corresponding 2D image projections as well as the calibrated intrinsic camera parameters, we need to determine the 6 DOF pose of the camera in the form of its rotation and translation with respect to the world/target. An inverse of the rotation matrix will in effect, provide the target pose. This follows the perspective projection model for pinhole cameras:<br>
 ![](media/pnp_desc.JPG)<br>
 
-'''
+```
 _, rvecs, tvecs, inliers = cv.solvePnPRansac(objpts, dst, mtx, dist,cv.SOLVEPNP_IPPE)
-'''
+```
