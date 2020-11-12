@@ -39,3 +39,5 @@ Given a set of n 3D points in a world reference frame and their corresponding 2D
 ```
 _, rvecs, tvecs, inliers = cv.solvePnPRansac(objpts, dst, mtx, dist,cv.SOLVEPNP_IPPE)
 ```
+The above function will return rotation and translation vectors which can be further processed used to project any 3d object. The pattern used here is coplanar, however that is not necessary. Using non coplanar 3D points helps to reduc ambiguites and masurement inaccuracies.<br>
+Refer to this link: https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga357634492a94efe8858d0ce1509da869 for different variants of PNP.
