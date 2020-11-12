@@ -21,5 +21,5 @@ extrinsic parameters. Intrinsic parameters deal with the camera's internal chara
 
 # Step 2: Creating trackable pattern 
 This is the most tricky part. We will need to create a LED pattern where each LED can be individually detected by using special geometric rules. Why do we need to do this ?<br>
-Beacause there is now way to establish a correspondece beween the LEDs dected in image to the one in the created pattern without geometric rules. I have provided one example here, and included programmes to prototype new patterns(bespoke_led_pattern_gen.py) and geomtry rules(
+Beacause there is no way to establish a correspondece beween the LEDs dected in image to the one in the created pattern without geometric rules. I have provided one example here, and included programmes to prototype new patterns(bespoke_led_pattern_gen.py) and geomtry rules(
 geometric_logic.py ) for them.
