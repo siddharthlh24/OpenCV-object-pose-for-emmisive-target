@@ -22,7 +22,7 @@ b) The calibration matrices for given saves as an **.npz** archive which is used
 
 # Step 2 + 3 : Creating trackable pattern, and tracking system for LEDs
 This is the most tricky part. We will need to create a LED pattern where each LED can be individually detected by using special geometric rules. <br>**Why do we need to do this** ?<br><br>
-Beacause there is **absolutely no way** to establish a correspondece beween the LEDs dected in image to the one in the created pattern **without geometric rules**. I have provided one example here, and have included programmes to prototype new patterns (bespoke_led_pattern_gen.py) and develop geometry rules(
+Beacause there is **absolutely no way** to establish a correspondece beween the LEDs dected in image to the one in the created pattern **without geometric rules**. I have provided one example here, and have included programmes to [prototype new patterns](bespoke_led_pattern_gen.py) and develop [geometry rules](
 geometric_logic.py ) for them. It is imporatant to take care while developing patterns, not to create abuiguities and minimize iterative detection methods. <br> 
 **In the picture below, on the left is the generated tracking pattern, and on the right is the geometric logic to detect each LED.**
 
@@ -45,4 +45,8 @@ Refer to this link: https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga357
 
 The current implementation also includes 2 moving averages for rotation and translation respectively to smoothen out jitter and increase accuracy. However, note that higher sizes for the moving average buffer will make response to change slower. A value of 3 to 5 is recommended for rotation and 1 for translation.<br>
 
-Object back projection is done by the following function
+Object back projection is done by the following function:
+```
+imgpts, jac = cv.projectPoints(cube3d, rvecs, tvecs, mtx, dist)
+```
+
