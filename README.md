@@ -19,7 +19,7 @@ Any camera has physical properties of how they represent a point in 3D space in 
 extrinsic parameters. Intrinsic parameters deal with the camera's internal characteristics, such as, its focal length, skew, distortion, and image centre.The camera will also have some inherent defects,such as barrel or pincushion distortion etc. which are represented in a distortion matrix. We use several images of chessboard to calibrate camera ( zheng method ).<br>
 ![](media/template.JPG)<br>
 a) Print the [required chessboard pattern](camera_calibration/calib_pattern.png) on paper and measure the side of a chessboard square to input into the programme. <br>
-b) The calibration matrices for given camera saves as an **.npz** archive which is used during tacking and pose estimation. I have included one as an example (poco_x2.npz) and can be used if we use any 1080p stream from phone cameras.
+b) The calibration matrices for given camera saves as an **.npz** archive which is used during tracking and pose estimation. I have included one as an example (poco_x2.npz) and can be used if we use any 1080p stream from phone cameras.
 
 # Step 2 + 3 : Creating trackable pattern, and tracking system for LEDs
 This is the most tricky part. We will need to create a LED pattern where each LED can be individually detected by using special geometric rules. <br>**Why do we need to do this** ?<br><br>
@@ -32,7 +32,7 @@ a) Detect all LEDs using a colurspace change to HSV and threshold for red. Find 
 b) Calculate a **convex hull** to detect on outer 4 points/LEDs . These will form **pt1,pt2,pt3,pt4** but we **don't know** in which order yet. <br>
 c) The remaining point/LED not part of the convex hull will be **in_pt**. Alternatively, we can find the centre of the convex hull and in_pt will always be the nearest point ( green rectangle ).<br>
 d) The point closest to in_pt is taken as pt1 (blue rectangle) . Then we go **clockwise** and assign other points on the hull in order. This is done by **calculating slopes and barrels shifting** the points according to the values.<br>
-e) We  have now identified every LEDs perfectly. <br>
+e) We  have now identified every LED. <br>
 
 # Step 4 : Perspective-n-point 
 Given a set of n 3D points in a world reference frame and their corresponding 2D image projections as well as the calibrated intrinsic camera parameters, we need to determine the 6 DOF pose of the camera in the form of its rotation and translation with respect to the world/target. An inverse of the rotation matrix will in effect, provide the target pose. This follows the perspective projection model for pinhole cameras:<br>
