@@ -87,9 +87,9 @@ trs_buffer = np.zeros((filt_len_trs,3),dtype=float)                             
 inc_trs=0
 
 ##############################################################################
-#webcam1 = VideoStream(src=0).start()
-cap = cv.VideoCapture('monitor_emmisive.mp4')
-#out = cv2.VideoWriter('project_2.mp4',cv2.VideoWriter_fourcc(*'DIVX'), 15, (1920,1080))
+#webcam1 = VideoStream(src=0).start()                                                                   #live stream
+cap = cv.VideoCapture('monitor_emmisive.mp4')                                                           #select source / video
+#out = cv2.VideoWriter('project_2.mp4',cv2.VideoWriter_fourcc(*'DIVX'), 15, (1920,1080))                
 #out = cv2.VideoWriter('filename_2.avi', cv2.VideoWriter_fourcc(*'MJPG'),15, (1920,1080)) 
 
 while (cap.isOpened()):
