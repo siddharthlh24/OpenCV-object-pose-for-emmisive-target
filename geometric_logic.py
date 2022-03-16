@@ -1,8 +1,6 @@
 import cv2
 import cv2 as cv
-from matplotlib.pyplot import close
 import numpy as np
-from matplotlib import pyplot as plt
 from scipy.spatial.transform import Rotation as R
 
 #################################################################################
@@ -40,7 +38,7 @@ def Diff(li1, li2):
     li_dif = [i for i in li1 + li2 if i not in li1 or i not in li2]
     return li_dif
 ################################################################################
-img = cv2.imread('black_mark.png')
+img = cv2.imread('tracking_marker.png')
 img = cv2.rotate(img, cv2.ROTATE_180) 
 hsv =cv.cvtColor(cv.blur(img,(7,7)),cv.COLOR_BGR2HSV)
 #hsv =cv.cvtColor(img,cv.COLOR_BGR2HSV)
@@ -71,7 +69,6 @@ for c in contours:
         cx = int(M['m10']/M['m00'])
         cy = int(M['m01']/M['m00'])
         list_points.append(np.array([cx,cy]))
-        plt.plot(cx,cy,'bo')
 
 list_points = np.asarray(list_points)
 print(list_points)
@@ -120,5 +117,4 @@ if(len(list_points)==5):
 
 
 cv2.imshow('img',img)
-#plt.show()
 cv2.waitKey(0)
