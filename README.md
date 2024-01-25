@@ -7,6 +7,7 @@ Demo video : https://youtu.be/RGoBDAEkDBU <br>
 2) Create a trackable pattern and store 3d information of the pattern using the physical construction information of the target.<br>
 3) Use camera to track key points and establish a correspondence between the points being tracked and 3D reference points.<br>
 4) Relative position and Orientation (Pose) are obtained by solving the Perspective-N-Point problem. <br>
+5) Output filtering ( using moving averages / low pas filter to reduce jitter )
 
 # Augmented Reality Output
 ![](media/ezgif-3-6bc187371c65.gif)
@@ -54,7 +55,7 @@ SOLVEPNP_AP3P
 SOLVEPNP_IPPE 
 SOLVEPNP_IPPE_SQUARE 
 ```
-The current implementation also includes 2 moving averages for rotation and translation respectively to smoothen out jitter and increase accuracy. However, note that higher sizes for the moving average buffer will make response to change slower. A value of 3 to 5 is recommended for rotation and 1 for translation.<br>
+The current implementation also includes 2 moving averages for rotation and translation respectively to smoothen out jitter and increase accuracy. However, note that higher sizes for the moving average buffer will make response to change slower. A value of 3 to 5 is recommended for rotation and 1 for translation.(30 fps camera)<br>
 
 Object back projection is done by the following function:
 ```
