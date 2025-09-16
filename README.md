@@ -63,3 +63,7 @@ imgpts, jac = cv.projectPoints(cube3d, rvecs, tvecs, mtx, dist)
 ```
 # Calculating derivatives
 As long as the time between frame capture is constant, rotation and linear velocities can be estimated easily.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=siddharthlh24/OpenCV-object-pose-for-emmisive-target&type=Date)](https://www.star-history.com/#siddharthlh24/OpenCV-object-pose-for-emmisive-target&Date)
